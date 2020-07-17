@@ -36,12 +36,13 @@
         <p> 테마 선택 (복수 선택 가능) </p>
         <button type="button" v-on:click="scrap"> 주제 보기 </button>
         <br><br>
-        <button v-on:click="show_middles(big_)" type="button" v-for="big_ in bigs" v-bind:key="big_"> {{ big_["title"] }} </button>
+        <button type="button" v-on:click="show_middles(big_)" v-for="big_ in bigs" v-bind:key="big_"> {{ big_["title"] }} </button>
         <br><br>
-        <button v-on:click="add_middles(middle)" type="button" v-for="middle in middles" v-bind:key="middle"> {{ middle["title"] }} </button>
+        <button type="button" v-on:click="add_middles(middle)" v-for="middle in middles" v-bind:key="middle"> {{ middle["title"] }} </button>
         <br><br>
         <textarea required type="text" name="middles_submit_title" v-model="middles_submit_title" readonly cols="40" rows="5"></textarea>
         <br><br>
+        <button type="button" v-on:click="clear_textarea"> Clear </button>
         <button type="submit"> Submit </button>
       </form>
     </div> 
@@ -147,6 +148,10 @@ export default {
           alert("테마 '" + this.middles_submit_title + "'에 관련주 '" + this.title + "' 등록 완료했습니다.")
         })
       }
+    },
+    clear_textarea: function(){
+      this.middles_submit_title = []
+      this.middles_submit_id = []
     }
   }
 }

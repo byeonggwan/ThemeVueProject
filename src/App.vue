@@ -1,5 +1,5 @@
-<template>
-  <div id="app">
+<template class="main">
+  <div id="app" >
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/admin">Admin</router-link>
@@ -19,6 +19,7 @@
 
 #nav {
   padding: 30px;
+  height: 10vh;
 }
 
 #nav a {
